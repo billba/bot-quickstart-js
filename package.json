@@ -1,0 +1,23 @@
+{
+  "name": "bot-quickstart-js",
+  "version": "0.1.0",
+  "license": "UNLICENSED",
+  "description": "Very simple bot using MS Bot Framework & LUIS.ai",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/billba/bot_quickstart_js"
+  },
+  "main": "bot.js",
+  "scripts": {
+    "watch": "nodemon bot.js",
+    "start": "node bot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "botbuilder": "^3.2.3",
+    "restify": "^4.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.10.2"
+  }
+}
