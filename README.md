@@ -2,18 +2,20 @@
 
 ## Getting up & running
 
-### Clone this repo
+Clone this repo
 
-### In your repo, create a text file called .env with the following contents:
+    git clone https://github.com/billba/bot-quickstart-js.git
+
+In your repo, create a text file called .env with the following contents:
 
     PORT = 9000
     MICROSOFT_APP_ID = app_id_you_got_when_you_registered_your_bot
     MICROSOFT_APP_PASSWORD = app_password_you_got_when_you_registered_your_bot    LUIS_APP
 
-### Configure
+Install Node modules
 
     npm install
 
-### Run
+Run
 
-    npm run start
+    npm run watch
