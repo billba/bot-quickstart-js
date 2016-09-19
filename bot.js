@@ -20,7 +20,6 @@ const bot = new botbuilder.UniversalBot(connector);
 
 bot.dialog('/',
     (session) => {
-        console.log("received", session.message.text);
-        session.send("MESSAGE FROM BOT TO USER");
+        session.send("Hello, World.");
     }
 );
