@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "botbuilder": "^3.2.3",
+    "dotenv": "^2.0.0",
     "restify": "^4.1.1"
   },
   "devDependencies": {

@@ -19,7 +19,20 @@ server.post('/api/messages', connector.listen());
 const bot = new builder.UniversalBot(connector);
 
 bot.dialog('/',
-    (session) => {
-        session.send("Hello, World.");
-    }
+    new builder
+    .IntentDialog({ recognizers: [new builder.LuisRecognizer(process.env.LUIS_APP_MODEL)] })
+    .matches('builtin.intent.communication.send_text', [
+        (session, args) => {
+            let message = builder.EntityRecognizer.findEntity(args.entities, 'builtin.communication.message');
+            message = message && message.entity;
+            let contact_name = builder.EntityRecognizer.findEntity(args.entities, 'builtin.communication.contact_name');
+            contact_name = contact_name && contact_name.entity;
+            session.send(`You asked to send the message "${message}" to "${contact_name}"`);
+        }
+    ])
+    .onDefault(
+        (session) => {
+            session.send("I am a very simple bot. Try asking me to send a message.");
+        }
+    )
 );
